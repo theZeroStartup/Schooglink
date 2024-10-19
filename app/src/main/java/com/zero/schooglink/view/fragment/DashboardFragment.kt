@@ -33,7 +33,6 @@ class DashboardFragment : BaseFragment() {
         super.onCreate(savedInstanceState)
 
         lifecycleScope.launch { attachObservers() }
-        dashboardVM.requestDashboardDetails.postValue(true)
     }
 
     override fun onCreateView(
@@ -48,6 +47,7 @@ class DashboardFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        dashboardVM.requestDashboardDetails.postValue(true)
         clickListeners()
         binding.tvTopLinks.performClick()
         binding.tvGreeting.text = dashboardVM.getGreetingMessage()

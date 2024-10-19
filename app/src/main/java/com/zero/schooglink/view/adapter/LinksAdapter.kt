@@ -35,7 +35,7 @@ class LinksAdapter(private val context: Context,
         holder.binding.tvDate.text = formatDate(link.date)
         holder.binding.tvClicks.text = link.clicks.toString()
         holder.binding.tvLink.text = link.link
-        Glide.with(context).load(link.image).placeholder(R.drawable.img_logo_sample).into(holder.binding.ivLogo)
+        Glide.with(context.applicationContext).load(link.image).placeholder(R.drawable.img_logo_sample).into(holder.binding.ivLogo)
 
         holder.binding.ibCopy.setOnClickListener { onClick.invoke(TYPE_COPY, link) }
         holder.binding.root.setOnClickListener { onClick.invoke(TYPE_OPEN_DETAILS, link) }
