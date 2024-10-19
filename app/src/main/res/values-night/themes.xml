@@ -1,0 +1,8 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Schooglink" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="colorPrimaryDark">@color/bluePrimary</item>
+        <item name="android:statusBarColor">@color/bluePrimary</item>
+    </style>
+</resources>

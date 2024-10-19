@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".view.fragment.TopLinksFragment">
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:textSize="13sp"
+        android:background="@drawable/bg_btn_grey_curved_stroke"
+        android:importantForAutofill="no"
+        android:fontFamily="@font/figtree"
+        android:drawableEnd="@drawable/baseline_search_24"
+        android:hint="@string/search_title"
+        android:inputType="textCapSentences"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:drawableTint="@color/grey"/>
+
+    <ImageView
+        android:id="@+id/ivNoDataFound"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:src="@drawable/img_no_data"
+        android:visibility="gone"/>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/item_links_shimmer"/>
+            <include layout="@layout/item_links_shimmer"/>
+            <include layout="@layout/item_links_shimmer"/>
+            <include layout="@layout/item_links_shimmer"/>
+            <include layout="@layout/item_links_shimmer"/>
+            <include layout="@layout/item_links_shimmer"/>
+            <include layout="@layout/item_links_shimmer"/>
+            <include layout="@layout/item_links_shimmer"/>
+            <include layout="@layout/item_links_shimmer"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLinks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        tools:listitem="@layout/item_links"
+        tools:itemCount="3"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

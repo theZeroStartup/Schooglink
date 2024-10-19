@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".view.fragment.DashboardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="32dp">
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/figtree"
+            android:text="@string/good_morning"
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/figtree"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/img_wave_small"
+            android:layout_marginTop="8dp"
+            android:text="@string/sample_name"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:drawablePadding="13dp"/>
+
+        <ImageView
+            android:id="@+id/ivNoDataFound"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/img_no_data"
+            android:visibility="gone"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llLinkTabsRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+            <TextView
+                android:id="@+id/tvTopLinks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:background="@drawable/bg_btn_blue_curved"
+                android:textStyle="bold"
+                android:text="@string/top_links"
+                android:fontFamily="@font/figtree"
+                android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/tvRecentLinks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="@string/recent_links"
+                android:fontFamily="@font/figtree"
+                android:textColor="@color/grey"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/tvTopLinks"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/linksFragmentContainerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="60dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/links_nav_graph" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/links_nav_graph"
+    app:startDestination="@id/topLinksFragment">
+
+    <fragment
+        android:id="@+id/topLinksFragment"
+        android:name="com.zero.schooglink.view.fragment.TopLinksFragment"
+        android:label="TopLinksFragment"
+        tools:layout="@layout/fragment_top_links" >
+    </fragment>
+    <fragment
+        android:id="@+id/recentLinksFragment"
+        android:name="com.zero.schooglink.view.fragment.RecentLinksFragment"
+        android:label="RecentLinksFragment"
+        tools:layout="@layout/fragment_recent_links" >
+    </fragment>
+</navigation>
